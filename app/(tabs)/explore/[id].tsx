@@ -1,10 +1,12 @@
+// Code =  app/(tabs)/explore/[id].tsx
+
 import { getPosts } from "@/lib/api";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 export default function PostDetailsScreen() {
-  const id = useLocalSearchParams<{ id: string }>();
+  const { id } = useLocalSearchParams<{ id: string }>();
   const [post, setPost] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,6 +23,7 @@ export default function PostDetailsScreen() {
 
   return (
     <View style={styles.container}>
+      <Text>Item ID: {id}</Text>
       <Text style={styles.title}>{post.title}</Text>
       <Text>{post.body}</Text>
     </View>
@@ -28,7 +31,7 @@ export default function PostDetailsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 16 },
-  title: { fontSize: 8, fontWeight: "bold", marginBottom: 8 },
+  container: { padding: 16, backgroundColor: "#fff" },
+  title: { fontSize: 20, fontWeight: "bold", marginBottom: 8 },
   error: { color: "red", textAlign: "center", marginTop: 50 },
 });

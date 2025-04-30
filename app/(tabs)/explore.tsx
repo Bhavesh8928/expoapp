@@ -29,7 +29,7 @@ export default function ExploreScreen() {
       data={posts}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({ item }) => (
-        <Card title={item.title} subtitle={item.body} />
+        <Card title={item.title} subtitle={item.body} id={item.id}/>
       )}
       contentContainerStyle={{ padding: 16 }}
     />

@@ -7,13 +7,8 @@ export default function HomeScreen() {
   return (
     <View style={{ padding: 20 }}>
       <Heading title="Welcome!" />
-      <Card title="React Native App" subtitle="Built with Expo + Router" />
+      <Card title="React Native App" subtitle="Built with Expo + Router" id={1} />
       <Button title="Click Me" onPress={() => alert("Button pressed!")} />
     </View>
   );
 }
-
-
-
-
-
